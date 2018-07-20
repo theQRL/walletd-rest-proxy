@@ -124,6 +124,13 @@ service WalletAPI
       };
     };
 
+    rpc GetTransactionsByAddress(TransactionsByAddressReq) returns (TransactionsByAddressResp) {
+        option (google.api.http) = {
+        post: "/api/GetTransactionsByAddress"
+        body: "*"
+      };
+    };
+
     rpc GetTransaction(TransactionReq) returns (TransactionResp) {
         option (google.api.http) = {
         post: "/api/GetTransaction"
@@ -319,6 +326,17 @@ message ChangePassphraseReq {
 message ChangePassphraseResp {
     uint32 code = 1;
     string error = 2;
+}
+
+message TransactionsByAddressReq {
+    string address = 1;
+}
+
+message TransactionsByAddressResp {
+    uint32 code = 1;
+    string error = 2;
+    repeated MiniTransaction mini_transactions = 3;
+    uint64 balance = 4;
 }
 
 message TransactionReq {

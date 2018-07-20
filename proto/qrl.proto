@@ -101,39 +101,45 @@ service PublicAPI
       };
     };
 
+    rpc GetTransactionsByAddress(GetTransactionsByAddressReq) returns (GetTransactionsByAddressResp) {
+        option (google.api.http) = {
+        post: "/api/GetTransactionsByAddress"
+      };
+    };
+
     rpc GetTransaction(GetTransactionReq) returns (GetTransactionResp) {
         option (google.api.http) = {
-        post: "/api/GetSlaveTxn"
+        post: "/api/GetTransaction"
       };
     };
 
     rpc GetBalance(GetBalanceReq) returns (GetBalanceResp) {
         option (google.api.http) = {
-        post: "/api/GetSlaveTxn"
+        post: "/api/GetBalance"
       };
     };
 
     rpc GetOTS(GetOTSReq) returns (GetOTSResp) {
         option (google.api.http) = {
-        post: "/api/GetSlaveTxn"
+        post: "/api/GetOTS"
       };
     };
 
     rpc GetHeight(GetHeightReq) returns (GetHeightResp) {
         option (google.api.http) = {
-        post: "/api/GetSlaveTxn"
+        post: "/api/GetHeight"
       };
     };
 
     rpc GetBlock(GetBlockReq) returns (GetBlockResp) {
         option (google.api.http) = {
-        post: "/api/GetSlaveTxn"
+        post: "/api/GetBlock"
       };
     };
 
     rpc GetBlockByNumber(GetBlockByNumberReq) returns (GetBlockByNumberResp) {
         option (google.api.http) = {
-        post: "/api/GetSlaveTxn"
+        post: "/api/GetBlockByNumber"
       };
     };
 
@@ -335,6 +341,21 @@ message SlaveTxnReq {
     repeated uint32 access_types = 3;
     uint64 fee = 4;
     bytes xmss_pk = 5;
+}
+
+message MiniTransaction {
+    string transaction_hash = 1;
+    bool out = 2;
+    uint64 amount = 3;
+}
+
+message GetTransactionsByAddressReq {
+    bytes address = 1;
+}
+
+message GetTransactionsByAddressResp {
+    repeated MiniTransaction mini_transactions = 1;
+    uint64 balance = 2;
 }
 
 message GetTransactionReq {
