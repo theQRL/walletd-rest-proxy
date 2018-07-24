@@ -172,6 +172,13 @@ service WalletAPI
         body: "*"
       };
     };
+
+    rpc GetAddressFromPK(AddressFromPKReq) returns (AddressFromPKResp) {
+        option (google.api.http) = {
+        post: "/api/GetAddressFromPK"
+        body: "*"
+      };
+    };
 }
 
 message AddNewAddressReq {
@@ -392,4 +399,14 @@ message BlockResp {
 
 message BlockByNumberReq {
     uint64 block_number = 1;
+}
+
+message AddressFromPKReq {
+    bytes pk = 1;
+}
+
+message AddressFromPKResp {
+    uint32 code = 1;
+    string error = 2;
+    string address = 3;
 }
