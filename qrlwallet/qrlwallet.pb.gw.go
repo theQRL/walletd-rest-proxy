@@ -41,15 +41,15 @@ func request_WalletAPI_AddNewAddress_0(ctx context.Context, marshaler runtime.Ma
 
 }
 
-func request_WalletAPI_AddAddressFromSeed_0(ctx context.Context, marshaler runtime.Marshaler, client WalletAPIClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq AddAddressFromSeedReq
+func request_WalletAPI_AddNewAddressWithSlaves_0(ctx context.Context, marshaler runtime.Marshaler, client WalletAPIClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq AddNewAddressWithSlavesReq
 	var metadata runtime.ServerMetadata
 
 	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.AddAddressFromSeed(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.AddNewAddressWithSlaves(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
@@ -158,6 +158,19 @@ func request_WalletAPI_RelayTransferTxn_0(ctx context.Context, marshaler runtime
 
 }
 
+func request_WalletAPI_RelayTransferTxnBySlave_0(ctx context.Context, marshaler runtime.Marshaler, client WalletAPIClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq RelayTransferTxnBySlaveReq
+	var metadata runtime.ServerMetadata
+
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := client.RelayTransferTxnBySlave(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+
+}
+
 func request_WalletAPI_RelayMessageTxn_0(ctx context.Context, marshaler runtime.Marshaler, client WalletAPIClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq RelayMessageTxnReq
 	var metadata runtime.ServerMetadata
@@ -167,6 +180,19 @@ func request_WalletAPI_RelayMessageTxn_0(ctx context.Context, marshaler runtime.
 	}
 
 	msg, err := client.RelayMessageTxn(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+
+}
+
+func request_WalletAPI_RelayMessageTxnBySlave_0(ctx context.Context, marshaler runtime.Marshaler, client WalletAPIClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq RelayMessageTxnBySlaveReq
+	var metadata runtime.ServerMetadata
+
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := client.RelayMessageTxnBySlave(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
@@ -184,6 +210,19 @@ func request_WalletAPI_RelayTokenTxn_0(ctx context.Context, marshaler runtime.Ma
 
 }
 
+func request_WalletAPI_RelayTokenTxnBySlave_0(ctx context.Context, marshaler runtime.Marshaler, client WalletAPIClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq RelayTokenTxnBySlaveReq
+	var metadata runtime.ServerMetadata
+
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := client.RelayTokenTxnBySlave(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+
+}
+
 func request_WalletAPI_RelayTransferTokenTxn_0(ctx context.Context, marshaler runtime.Marshaler, client WalletAPIClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq RelayTransferTokenTxnReq
 	var metadata runtime.ServerMetadata
@@ -197,6 +236,19 @@ func request_WalletAPI_RelayTransferTokenTxn_0(ctx context.Context, marshaler ru
 
 }
 
+func request_WalletAPI_RelayTransferTokenTxnBySlave_0(ctx context.Context, marshaler runtime.Marshaler, client WalletAPIClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq RelayTransferTokenTxnBySlaveReq
+	var metadata runtime.ServerMetadata
+
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := client.RelayTransferTokenTxnBySlave(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+
+}
+
 func request_WalletAPI_RelaySlaveTxn_0(ctx context.Context, marshaler runtime.Marshaler, client WalletAPIClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq RelaySlaveTxnReq
 	var metadata runtime.ServerMetadata
@@ -206,6 +258,19 @@ func request_WalletAPI_RelaySlaveTxn_0(ctx context.Context, marshaler runtime.Ma
 	}
 
 	msg, err := client.RelaySlaveTxn(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+
+}
+
+func request_WalletAPI_RelaySlaveTxnBySlave_0(ctx context.Context, marshaler runtime.Marshaler, client WalletAPIClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq RelaySlaveTxnBySlaveReq
+	var metadata runtime.ServerMetadata
+
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	msg, err := client.RelaySlaveTxnBySlave(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
@@ -394,7 +459,7 @@ func RegisterWalletAPIHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
-	mux.Handle("POST", pattern_WalletAPI_AddAddressFromSeed_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_WalletAPI_AddNewAddressWithSlaves_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		if cn, ok := w.(http.CloseNotifier); ok {
@@ -412,14 +477,14 @@ func RegisterWalletAPIHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_WalletAPI_AddAddressFromSeed_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_WalletAPI_AddNewAddressWithSlaves_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_WalletAPI_AddAddressFromSeed_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_WalletAPI_AddNewAddressWithSlaves_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -655,6 +720,35 @@ func RegisterWalletAPIHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
+	mux.Handle("POST", pattern_WalletAPI_RelayTransferTxnBySlave_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		if cn, ok := w.(http.CloseNotifier); ok {
+			go func(done <-chan struct{}, closed <-chan bool) {
+				select {
+				case <-done:
+				case <-closed:
+					cancel()
+				}
+			}(ctx.Done(), cn.CloseNotify())
+		}
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_WalletAPI_RelayTransferTxnBySlave_0(rctx, inboundMarshaler, client, req, pathParams)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_WalletAPI_RelayTransferTxnBySlave_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
 	mux.Handle("POST", pattern_WalletAPI_RelayMessageTxn_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -681,6 +775,35 @@ func RegisterWalletAPIHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		}
 
 		forward_WalletAPI_RelayMessageTxn_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
+	mux.Handle("POST", pattern_WalletAPI_RelayMessageTxnBySlave_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		if cn, ok := w.(http.CloseNotifier); ok {
+			go func(done <-chan struct{}, closed <-chan bool) {
+				select {
+				case <-done:
+				case <-closed:
+					cancel()
+				}
+			}(ctx.Done(), cn.CloseNotify())
+		}
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_WalletAPI_RelayMessageTxnBySlave_0(rctx, inboundMarshaler, client, req, pathParams)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_WalletAPI_RelayMessageTxnBySlave_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -713,6 +836,35 @@ func RegisterWalletAPIHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
+	mux.Handle("POST", pattern_WalletAPI_RelayTokenTxnBySlave_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		if cn, ok := w.(http.CloseNotifier); ok {
+			go func(done <-chan struct{}, closed <-chan bool) {
+				select {
+				case <-done:
+				case <-closed:
+					cancel()
+				}
+			}(ctx.Done(), cn.CloseNotify())
+		}
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_WalletAPI_RelayTokenTxnBySlave_0(rctx, inboundMarshaler, client, req, pathParams)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_WalletAPI_RelayTokenTxnBySlave_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
 	mux.Handle("POST", pattern_WalletAPI_RelayTransferTokenTxn_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -742,6 +894,35 @@ func RegisterWalletAPIHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
+	mux.Handle("POST", pattern_WalletAPI_RelayTransferTokenTxnBySlave_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		if cn, ok := w.(http.CloseNotifier); ok {
+			go func(done <-chan struct{}, closed <-chan bool) {
+				select {
+				case <-done:
+				case <-closed:
+					cancel()
+				}
+			}(ctx.Done(), cn.CloseNotify())
+		}
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_WalletAPI_RelayTransferTokenTxnBySlave_0(rctx, inboundMarshaler, client, req, pathParams)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_WalletAPI_RelayTransferTokenTxnBySlave_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
 	mux.Handle("POST", pattern_WalletAPI_RelaySlaveTxn_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -768,6 +949,35 @@ func RegisterWalletAPIHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		}
 
 		forward_WalletAPI_RelaySlaveTxn_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
+	mux.Handle("POST", pattern_WalletAPI_RelaySlaveTxnBySlave_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		if cn, ok := w.(http.CloseNotifier); ok {
+			go func(done <-chan struct{}, closed <-chan bool) {
+				select {
+				case <-done:
+				case <-closed:
+					cancel()
+				}
+			}(ctx.Done(), cn.CloseNotify())
+		}
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_WalletAPI_RelaySlaveTxnBySlave_0(rctx, inboundMarshaler, client, req, pathParams)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_WalletAPI_RelaySlaveTxnBySlave_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -1038,7 +1248,7 @@ func RegisterWalletAPIHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 var (
 	pattern_WalletAPI_AddNewAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "AddNewAddress"}, ""))
 
-	pattern_WalletAPI_AddAddressFromSeed_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "AddAddressFromSeed"}, ""))
+	pattern_WalletAPI_AddNewAddressWithSlaves_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "AddNewAddressWithSlaves"}, ""))
 
 	pattern_WalletAPI_ListAddresses_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "ListAddresses"}, ""))
 
@@ -1056,13 +1266,23 @@ var (
 
 	pattern_WalletAPI_RelayTransferTxn_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "RelayTransferTxn"}, ""))
 
+	pattern_WalletAPI_RelayTransferTxnBySlave_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "RelayTransferTxnBySlave"}, ""))
+
 	pattern_WalletAPI_RelayMessageTxn_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "RelayMessageTxn"}, ""))
+
+	pattern_WalletAPI_RelayMessageTxnBySlave_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "RelayMessageTxnBySlave"}, ""))
 
 	pattern_WalletAPI_RelayTokenTxn_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "RelayTokenTxn"}, ""))
 
+	pattern_WalletAPI_RelayTokenTxnBySlave_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "RelayTokenTxnBySlave"}, ""))
+
 	pattern_WalletAPI_RelayTransferTokenTxn_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "RelayTransferTokenTxn"}, ""))
 
+	pattern_WalletAPI_RelayTransferTokenTxnBySlave_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "RelayTransferTokenTxnBySlave"}, ""))
+
 	pattern_WalletAPI_RelaySlaveTxn_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "RelaySlaveTxn"}, ""))
+
+	pattern_WalletAPI_RelaySlaveTxnBySlave_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "RelaySlaveTxnBySlave"}, ""))
 
 	pattern_WalletAPI_ChangePassphrase_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "ChangePassphrase"}, ""))
 
@@ -1086,7 +1306,7 @@ var (
 var (
 	forward_WalletAPI_AddNewAddress_0 = runtime.ForwardResponseMessage
 
-	forward_WalletAPI_AddAddressFromSeed_0 = runtime.ForwardResponseMessage
+	forward_WalletAPI_AddNewAddressWithSlaves_0 = runtime.ForwardResponseMessage
 
 	forward_WalletAPI_ListAddresses_0 = runtime.ForwardResponseMessage
 
@@ -1104,13 +1324,23 @@ var (
 
 	forward_WalletAPI_RelayTransferTxn_0 = runtime.ForwardResponseMessage
 
+	forward_WalletAPI_RelayTransferTxnBySlave_0 = runtime.ForwardResponseMessage
+
 	forward_WalletAPI_RelayMessageTxn_0 = runtime.ForwardResponseMessage
+
+	forward_WalletAPI_RelayMessageTxnBySlave_0 = runtime.ForwardResponseMessage
 
 	forward_WalletAPI_RelayTokenTxn_0 = runtime.ForwardResponseMessage
 
+	forward_WalletAPI_RelayTokenTxnBySlave_0 = runtime.ForwardResponseMessage
+
 	forward_WalletAPI_RelayTransferTokenTxn_0 = runtime.ForwardResponseMessage
 
+	forward_WalletAPI_RelayTransferTokenTxnBySlave_0 = runtime.ForwardResponseMessage
+
 	forward_WalletAPI_RelaySlaveTxn_0 = runtime.ForwardResponseMessage
+
+	forward_WalletAPI_RelaySlaveTxnBySlave_0 = runtime.ForwardResponseMessage
 
 	forward_WalletAPI_ChangePassphrase_0 = runtime.ForwardResponseMessage
 
