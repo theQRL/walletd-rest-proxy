@@ -42,8 +42,7 @@ service WalletAPI
 
     rpc ListAddresses(ListAddressesReq) returns(ListAddressesResp) {
         option (google.api.http) = {
-        post: "/api/ListAddresses"
-        body: "*"
+        get: "/api/ListAddresses"
       };
     };
 
@@ -63,8 +62,7 @@ service WalletAPI
 
     rpc LockWallet(LockWalletReq) returns (LockWalletResp) {
         option (google.api.http) = {
-        post: "/api/LockWallet"
-        body: "*"
+        get: "/api/LockWallet"
       };
     };
 
@@ -84,8 +82,7 @@ service WalletAPI
 
     rpc GetWalletInfo(GetWalletInfoReq) returns (GetWalletInfoResp) {
         option (google.api.http) = {
-        post: "/api/GetWalletInfo"
-        body: "*"
+        get: "/api/GetWalletInfo"
       };
     };
 
@@ -196,8 +193,7 @@ service WalletAPI
 
     rpc GetHeight(HeightReq) returns (HeightResp) {
         option (google.api.http) = {
-        post: "/api/GetHeight"
-        body: "*"
+        get: "/api/GetHeight"
       };
     };
 
@@ -224,8 +220,7 @@ service WalletAPI
 
     rpc GetNodeInfo(NodeInfoReq) returns (NodeInfoResp) {
         option (google.api.http) = {
-        post: "/api/GetNodeInfo"
-        body: "*"
+        get: "/api/GetNodeInfo"
       };
     };
 }
