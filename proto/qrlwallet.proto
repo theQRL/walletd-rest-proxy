@@ -5,8 +5,11 @@ syntax = "proto3";
 
 package qrl;
 
+option go_package = "github.com/theQRL/walletd-rest-proxy/qrlwallet";
+
 import "qrl.proto";
 import "google/api/annotations.proto";
+
 
 ////////////////////////////
 ////////////////////////////
@@ -168,6 +171,13 @@ service WalletAPI
         post: "/api/GetTransactionsByAddress"
         body: "*"
       };
+    };
+
+    rpc GetPaginatedTransactionsByAddress(PaginatedTransactionsByAddressReq) returns (PaginatedTransactionsByAddressResp) {
+        option (google.api.http) = {
+            post: "/api/GetPaginatedTransactionsByAddress"
+            body: "*"
+        };
     };
 
     rpc GetTransaction(TransactionReq) returns (TransactionResp) {
@@ -446,6 +456,19 @@ message TransactionsByAddressReq {
 }
 
 message TransactionsByAddressResp {
+    uint32 code = 1;
+    string error = 2;
+    repeated MiniTransaction mini_transactions = 3;
+    uint64 balance = 4;
+}
+
+message PaginatedTransactionsByAddressReq {
+    string address = 1;
+    uint64 item_per_page = 2;
+    uint64 page_number = 3;
+}
+
+message PaginatedTransactionsByAddressResp {
     uint32 code = 1;
     string error = 2;
     repeated MiniTransaction mini_transactions = 3;
