@@ -5,7 +5,10 @@ syntax = "proto3";
 
 package qrl;
 
+option go_package = "github.com/theQRL/walletd-rest-proxy/generated";
+
 import "google/api/annotations.proto";
+
 
 ////////////////////////////
 ////////////////////////////
