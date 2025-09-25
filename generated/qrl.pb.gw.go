@@ -497,18 +497,15 @@ func local_request_PublicAPI_GetAddressFromPK_0(ctx context.Context, marshaler r
 
 }
 
-var (
-	filter_PublicAPI_GetMultiSigCreateTxn_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
-)
-
 func request_PublicAPI_GetMultiSigCreateTxn_0(ctx context.Context, marshaler runtime.Marshaler, client PublicAPIClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq MultiSigCreateTxnReq
 	var metadata runtime.ServerMetadata
 
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_PublicAPI_GetMultiSigCreateTxn_0); err != nil {
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -521,10 +518,11 @@ func local_request_PublicAPI_GetMultiSigCreateTxn_0(ctx context.Context, marshal
 	var protoReq MultiSigCreateTxnReq
 	var metadata runtime.ServerMetadata
 
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_PublicAPI_GetMultiSigCreateTxn_0); err != nil {
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -533,18 +531,15 @@ func local_request_PublicAPI_GetMultiSigCreateTxn_0(ctx context.Context, marshal
 
 }
 
-var (
-	filter_PublicAPI_GetMultiSigSpendTxn_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
-)
-
 func request_PublicAPI_GetMultiSigSpendTxn_0(ctx context.Context, marshaler runtime.Marshaler, client PublicAPIClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq MultiSigSpendTxnReq
 	var metadata runtime.ServerMetadata
 
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_PublicAPI_GetMultiSigSpendTxn_0); err != nil {
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -557,10 +552,11 @@ func local_request_PublicAPI_GetMultiSigSpendTxn_0(ctx context.Context, marshale
 	var protoReq MultiSigSpendTxnReq
 	var metadata runtime.ServerMetadata
 
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_PublicAPI_GetMultiSigSpendTxn_0); err != nil {
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -569,18 +565,15 @@ func local_request_PublicAPI_GetMultiSigSpendTxn_0(ctx context.Context, marshale
 
 }
 
-var (
-	filter_PublicAPI_GetMultiSigVoteTxn_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
-)
-
 func request_PublicAPI_GetMultiSigVoteTxn_0(ctx context.Context, marshaler runtime.Marshaler, client PublicAPIClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq MultiSigVoteTxnReq
 	var metadata runtime.ServerMetadata
 
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_PublicAPI_GetMultiSigVoteTxn_0); err != nil {
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -593,10 +586,11 @@ func local_request_PublicAPI_GetMultiSigVoteTxn_0(ctx context.Context, marshaler
 	var protoReq MultiSigVoteTxnReq
 	var metadata runtime.ServerMetadata
 
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_PublicAPI_GetMultiSigVoteTxn_0); err != nil {
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -605,18 +599,15 @@ func local_request_PublicAPI_GetMultiSigVoteTxn_0(ctx context.Context, marshaler
 
 }
 
-var (
-	filter_PublicAPI_GetMessageTxn_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
-)
-
 func request_PublicAPI_GetMessageTxn_0(ctx context.Context, marshaler runtime.Marshaler, client PublicAPIClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq MessageTxnReq
 	var metadata runtime.ServerMetadata
 
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_PublicAPI_GetMessageTxn_0); err != nil {
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -629,10 +620,11 @@ func local_request_PublicAPI_GetMessageTxn_0(ctx context.Context, marshaler runt
 	var protoReq MessageTxnReq
 	var metadata runtime.ServerMetadata
 
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_PublicAPI_GetMessageTxn_0); err != nil {
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -641,18 +633,15 @@ func local_request_PublicAPI_GetMessageTxn_0(ctx context.Context, marshaler runt
 
 }
 
-var (
-	filter_PublicAPI_GetTokenTxn_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
-)
-
 func request_PublicAPI_GetTokenTxn_0(ctx context.Context, marshaler runtime.Marshaler, client PublicAPIClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq TokenTxnReq
 	var metadata runtime.ServerMetadata
 
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_PublicAPI_GetTokenTxn_0); err != nil {
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -665,10 +654,11 @@ func local_request_PublicAPI_GetTokenTxn_0(ctx context.Context, marshaler runtim
 	var protoReq TokenTxnReq
 	var metadata runtime.ServerMetadata
 
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_PublicAPI_GetTokenTxn_0); err != nil {
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -677,18 +667,15 @@ func local_request_PublicAPI_GetTokenTxn_0(ctx context.Context, marshaler runtim
 
 }
 
-var (
-	filter_PublicAPI_GetTransferTokenTxn_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
-)
-
 func request_PublicAPI_GetTransferTokenTxn_0(ctx context.Context, marshaler runtime.Marshaler, client PublicAPIClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq TransferTokenTxnReq
 	var metadata runtime.ServerMetadata
 
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_PublicAPI_GetTransferTokenTxn_0); err != nil {
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -701,10 +688,11 @@ func local_request_PublicAPI_GetTransferTokenTxn_0(ctx context.Context, marshale
 	var protoReq TransferTokenTxnReq
 	var metadata runtime.ServerMetadata
 
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_PublicAPI_GetTransferTokenTxn_0); err != nil {
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -713,18 +701,15 @@ func local_request_PublicAPI_GetTransferTokenTxn_0(ctx context.Context, marshale
 
 }
 
-var (
-	filter_PublicAPI_GetSlaveTxn_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
-)
-
 func request_PublicAPI_GetSlaveTxn_0(ctx context.Context, marshaler runtime.Marshaler, client PublicAPIClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq SlaveTxnReq
 	var metadata runtime.ServerMetadata
 
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_PublicAPI_GetSlaveTxn_0); err != nil {
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -737,10 +722,11 @@ func local_request_PublicAPI_GetSlaveTxn_0(ctx context.Context, marshaler runtim
 	var protoReq SlaveTxnReq
 	var metadata runtime.ServerMetadata
 
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_PublicAPI_GetSlaveTxn_0); err != nil {
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -749,18 +735,15 @@ func local_request_PublicAPI_GetSlaveTxn_0(ctx context.Context, marshaler runtim
 
 }
 
-var (
-	filter_PublicAPI_GetLatticeTxn_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
-)
-
 func request_PublicAPI_GetLatticeTxn_0(ctx context.Context, marshaler runtime.Marshaler, client PublicAPIClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq LatticeTxnReq
 	var metadata runtime.ServerMetadata
 
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_PublicAPI_GetLatticeTxn_0); err != nil {
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -773,10 +756,11 @@ func local_request_PublicAPI_GetLatticeTxn_0(ctx context.Context, marshaler runt
 	var protoReq LatticeTxnReq
 	var metadata runtime.ServerMetadata
 
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_PublicAPI_GetLatticeTxn_0); err != nil {
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -1763,7 +1747,7 @@ func RegisterPublicAPIHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
-	mux.Handle("GET", pattern_PublicAPI_GetMessageTxn_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_PublicAPI_GetMessageTxn_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -1786,7 +1770,7 @@ func RegisterPublicAPIHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
-	mux.Handle("GET", pattern_PublicAPI_GetTokenTxn_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_PublicAPI_GetTokenTxn_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -1809,7 +1793,7 @@ func RegisterPublicAPIHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
-	mux.Handle("GET", pattern_PublicAPI_GetTransferTokenTxn_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_PublicAPI_GetTransferTokenTxn_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -1878,7 +1862,7 @@ func RegisterPublicAPIHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
-	mux.Handle("POST", pattern_PublicAPI_GetTransaction_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_PublicAPI_GetTransaction_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -1901,7 +1885,7 @@ func RegisterPublicAPIHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
-	mux.Handle("POST", pattern_PublicAPI_GetMiniTransactionsByAddress_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_PublicAPI_GetMiniTransactionsByAddress_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -1924,7 +1908,7 @@ func RegisterPublicAPIHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
-	mux.Handle("POST", pattern_PublicAPI_GetTransactionsByAddress_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_PublicAPI_GetTransactionsByAddress_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -2108,7 +2092,7 @@ func RegisterPublicAPIHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
-	mux.Handle("POST", pattern_PublicAPI_GetBalance_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_PublicAPI_GetBalance_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -2131,7 +2115,7 @@ func RegisterPublicAPIHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
-	mux.Handle("POST", pattern_PublicAPI_GetTotalBalance_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_PublicAPI_GetTotalBalance_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -2154,7 +2138,7 @@ func RegisterPublicAPIHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
-	mux.Handle("POST", pattern_PublicAPI_GetOTS_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_PublicAPI_GetOTS_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -2177,7 +2161,7 @@ func RegisterPublicAPIHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
-	mux.Handle("POST", pattern_PublicAPI_GetHeight_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_PublicAPI_GetHeight_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -2200,7 +2184,7 @@ func RegisterPublicAPIHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
-	mux.Handle("POST", pattern_PublicAPI_GetBlock_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_PublicAPI_GetBlock_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -2223,7 +2207,7 @@ func RegisterPublicAPIHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
-	mux.Handle("POST", pattern_PublicAPI_GetBlockByNumber_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_PublicAPI_GetBlockByNumber_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -2647,7 +2631,7 @@ func RegisterPublicAPIHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
-	mux.Handle("GET", pattern_PublicAPI_GetMessageTxn_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_PublicAPI_GetMessageTxn_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
@@ -2667,7 +2651,7 @@ func RegisterPublicAPIHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
-	mux.Handle("GET", pattern_PublicAPI_GetTokenTxn_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_PublicAPI_GetTokenTxn_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
@@ -2687,7 +2671,7 @@ func RegisterPublicAPIHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
-	mux.Handle("GET", pattern_PublicAPI_GetTransferTokenTxn_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_PublicAPI_GetTransferTokenTxn_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
@@ -2747,7 +2731,7 @@ func RegisterPublicAPIHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
-	mux.Handle("POST", pattern_PublicAPI_GetTransaction_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_PublicAPI_GetTransaction_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
@@ -2767,7 +2751,7 @@ func RegisterPublicAPIHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
-	mux.Handle("POST", pattern_PublicAPI_GetMiniTransactionsByAddress_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_PublicAPI_GetMiniTransactionsByAddress_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
@@ -2787,7 +2771,7 @@ func RegisterPublicAPIHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
-	mux.Handle("POST", pattern_PublicAPI_GetTransactionsByAddress_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_PublicAPI_GetTransactionsByAddress_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
@@ -2947,7 +2931,7 @@ func RegisterPublicAPIHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
-	mux.Handle("POST", pattern_PublicAPI_GetBalance_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_PublicAPI_GetBalance_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
@@ -2967,7 +2951,7 @@ func RegisterPublicAPIHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
-	mux.Handle("POST", pattern_PublicAPI_GetTotalBalance_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_PublicAPI_GetTotalBalance_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
@@ -2987,7 +2971,7 @@ func RegisterPublicAPIHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
-	mux.Handle("POST", pattern_PublicAPI_GetOTS_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_PublicAPI_GetOTS_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
@@ -3007,7 +2991,7 @@ func RegisterPublicAPIHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
-	mux.Handle("POST", pattern_PublicAPI_GetHeight_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_PublicAPI_GetHeight_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
@@ -3027,7 +3011,7 @@ func RegisterPublicAPIHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
-	mux.Handle("POST", pattern_PublicAPI_GetBlock_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_PublicAPI_GetBlock_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
@@ -3047,7 +3031,7 @@ func RegisterPublicAPIHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
-	mux.Handle("POST", pattern_PublicAPI_GetBlockByNumber_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_PublicAPI_GetBlockByNumber_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
@@ -3071,83 +3055,83 @@ func RegisterPublicAPIHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 }
 
 var (
-	pattern_PublicAPI_GetNodeState_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetNodeState"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetNodeState_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetNodeState"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetKnownPeers_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetKnownPeers"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetKnownPeers_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetKnownPeers"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetPeersStat_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetPeersState"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetPeersStat_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetPeersState"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetStats_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetStats"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetStats_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetStats"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetAddressState_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetAddressState"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetAddressState_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetAddressState"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetOptimizedAddressState_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetOptimizedAddressState"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetOptimizedAddressState_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetOptimizedAddressState"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetMultiSigAddressState_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetMultiSigAddressState"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetMultiSigAddressState_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetMultiSigAddressState"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_IsSlave_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "IsSlave"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_IsSlave_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "IsSlave"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetObject_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetObject"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetObject_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetObject"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetLatestData_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetLatestData"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetLatestData_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetLatestData"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_PushTransaction_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "PushTransaction"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_PushTransaction_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "PushTransaction"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_TransferCoins_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "TransferCoins"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_TransferCoins_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "TransferCoins"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_ParseAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "ParseAddress"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_ParseAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "ParseAddress"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetChainStats_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetChainStats"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetChainStats_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetChainStats"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetAddressFromPK_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetAddressFromPK"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetAddressFromPK_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetAddressFromPK"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetMultiSigCreateTxn_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetMultiSigCreateTxn"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetMultiSigCreateTxn_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetMultiSigCreateTxn"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetMultiSigSpendTxn_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetMultiSigSpendTxn"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetMultiSigSpendTxn_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetMultiSigSpendTxn"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetMultiSigVoteTxn_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetMultiSigVoteTxn"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetMultiSigVoteTxn_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetMultiSigVoteTxn"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetMessageTxn_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetMessageTxn"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetMessageTxn_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetMessageTxn"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetTokenTxn_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetTokenTxn"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetTokenTxn_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetTokenTxn"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetTransferTokenTxn_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetTransferTokenTxn"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetTransferTokenTxn_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetTransferTokenTxn"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetSlaveTxn_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetSlaveTxn"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetSlaveTxn_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetSlaveTxn"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetLatticeTxn_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetLatticeTxn"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetLatticeTxn_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetLatticeTxn"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetTransaction_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetTransaction"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetTransaction_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetTransaction"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetMiniTransactionsByAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetMiniTransactionsByAddress"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetMiniTransactionsByAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetMiniTransactionsByAddress"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetTransactionsByAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetTransactionsByAddress"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetTransactionsByAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetTransactionsByAddress"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetTokensByAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetTokensByAddress"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetTokensByAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetTokensByAddress"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetSlavesByAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetSlavesByAddress"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetSlavesByAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetSlavesByAddress"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetLatticePKsByAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetLatticePKsByAddress"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetLatticePKsByAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetLatticePKsByAddress"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetMultiSigAddressesByAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetMultiSigAddressesByAddress"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetMultiSigAddressesByAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetMultiSigAddressesByAddress"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetMultiSigSpendTxsByAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetMultiSigSpendTxsByAddress"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetMultiSigSpendTxsByAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetMultiSigSpendTxsByAddress"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetVoteStats_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetVoteStats"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetVoteStats_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetVoteStats"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetInboxMessagesByAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetInboxMessagesByAddress"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetInboxMessagesByAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetInboxMessagesByAddress"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetBalance_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetBalance"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetBalance_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetBalance"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetTotalBalance_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetTotalBalance"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetTotalBalance_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetTotalBalance"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetOTS_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetOTS"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetOTS_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetOTS"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetHeight_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetHeight"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetHeight_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetHeight"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetBlock_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetBlock"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetBlock_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetBlock"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_PublicAPI_GetBlockByNumber_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "GetBlockByNumber"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_PublicAPI_GetBlockByNumber_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"public", "GetBlockByNumber"}, "", runtime.AssumeColonVerbOpt(true)))
 )
 
 var (
