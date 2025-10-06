@@ -516,6 +516,7 @@ message OTSResp {
     string error = 2;
     repeated bytes ots_bitfield = 3;
     uint64 next_unused_ots_index = 4;
+    bool unused_ots_index_found = 5;
 }
 
 message HeightReq {
